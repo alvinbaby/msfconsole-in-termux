@@ -1,4 +1,4 @@
-# msfconsole-in-termux
+# msfconsole-termux
 
 msfconsole termux error fix
 
