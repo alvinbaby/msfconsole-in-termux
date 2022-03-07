@@ -12,7 +12,7 @@ msfconsole termux error fix
 * `git clone https://github.com/alvinbaby/msfconsole-in-termux.git`
 * `ls`
 * `cd msfconsole-in-termux`
-* `pip3 install -r .txt`
+* `pip3 install -r Data.txt`
 * `chmod +x *`
 * `bash metasploit.sh`
 * `./metasploit.sh`
@@ -25,7 +25,7 @@ msfconsole termux error fix
 * `git clone https://github.com/alvinbaby/msfconsole-in-termux.git`
 * `ls`
 * `cd msfconsole-in-termux`
-* `pip3 install -r .txt`
+* `pip3 install -r Data.txt`
 * `chmod +x *`
 * `sudo bash metasploit.sh`
 
