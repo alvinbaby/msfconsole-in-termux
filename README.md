@@ -23,7 +23,7 @@ msfconsole termux error fix
 * `pip3 install -r Data.txt`
 * `chmod +x *`
 * `bash metasploit.sh`
-* `./metasploit.sh`
+* `./msfconsole`
 
 ## INSTALLATION [Kali Linux]
 
