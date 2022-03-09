@@ -8,7 +8,7 @@ msfconsole termux error fix
 <div align="center">
   <img border-radius: 15px src="IMG_20220307_210505_716.jpg"width="300" height="400"/>
   <p align="center">
-
+[msfconsole error termux]
 
 ## INSTALLATION [Termux]
 
@@ -40,4 +40,6 @@ msfconsole termux error fix
 <div align="center">
   <img border-radius: 15px src="Screenshot_2022-03-09-20-00-54-407_com.termux.jpg"width="300" height="400"/>
   <p align="center">
+
+[msfconsole error termux fix]
 
