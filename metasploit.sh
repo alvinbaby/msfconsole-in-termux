@@ -9,6 +9,8 @@ echo "
             +-+-+ +-+-+ +-+-+-+-+
 "
 
+echo "Please wait..."
+
 center() {
   termwidth=$(stty size | cut -d" " -f2)
   padding="$(printf '%0.1s' ={1..500})"
@@ -20,10 +22,11 @@ center " Loading..."
 source <(echo "c3Bpbm5lcj0oICd8JyAnLycgJy0nICdcJyApOwoKY291bnQoKXsKICBzcGluICYKICBwaWQ9JCEKICBmb3IgaSBpbiBgc2VxIDEgMTBgCiAgZG8KICAgIHNsZWVwIDE7CiAgZG9uZQoKICBraWxsICRwaWQgIAp9CgpzcGluKCl7CiAgd2hpbGUgWyAxIF0KICBkbyAKICAgIGZvciBpIGluICR7c3Bpbm5lcltAXX07IAogICAgZG8gCiAgICAgIGVjaG8gLW5lICJcciRpIjsKICAgICAgc2xlZXAgMC4yOwogICAgZG9uZTsKICBkb25lCn0KCmNvdW50" | base64 -d)
 
 echo
-center "*** Dependencies installation..."
-
-# Remove not working repositories
-rm $PREFIX/etc/apt/sources.list.d/*
+center "Dependencies installation..."
+sleep 1
+echo "Deleting old repositories... "
+sleep 1
+rm $PREFIX/etc/apt/sources.list.d/* > /dev/null 2>&1
 
 # Install gnupg required to sign repository
 pkg install -y gnupg
@@ -40,7 +43,6 @@ echo '## Set low priority for all gushmazuko repository (for security purposes)
 Package: *
 Pin: release gushmazuko
 Pin-Priority: 100
-
 ## Set highest priority for ruby package from gushmazuko repository
 Package: ruby
 Pin: release gushmazuko
@@ -57,26 +59,26 @@ python3 -m pip install --upgrade pip
 python3 -m pip install requests
 
 echo
-center "*** Fix ruby BigDecimal"
+center "Fix ruby BigDecimal..."
 source <(curl -sL https://github.com/termux/termux-packages/files/2912002/fix-ruby-bigdecimal.sh.txt)
 
 echo
-center "*** Erasing old metasploit folder..."
+center "Erasing old metasploit folder..."
 rm -rf $HOME/metasploit-framework
 
 echo
-center "*** Downloading..."
+center "Downloading metasploit..."
 cd $HOME
 git clone https://github.com/rapid7/metasploit-framework.git --depth=1
 
 echo
-center "*** Installation..."
+center "Installation..."
 cd $HOME/metasploit-framework
 sed '/rbnacl/d' -i Gemfile.lock
 sed '/rbnacl/d' -i metasploit-framework.gemspec
 
 echo 
-center "《《《  MSF FIX 》》》"
+
 
 export MSF_FIX="spec.add_runtime_dependency 'net-smtp'"
 sed -i "146i \  $MSF_FIX" metasploit-framework.gemspec
@@ -104,7 +106,6 @@ ln -s $HOME/metasploit-framework/msfvenom /data/data/com.termux/files/usr/bin/
 termux-elf-cleaner /data/data/com.termux/files/usr/lib/ruby/gems/*/gems/pg-*/lib/pg_ext.so
 
 echo
-center "*"
 echo -e "\033[32m Suppressing Warnings\033[0m"
 
 sed -i '355 s/::Exception, //' $PREFIX/bin/msfvenom
@@ -114,6 +115,4 @@ sed -i '86 {s/^/#/};96 {s/^/#/}' /data/data/com.termux/files/usr/lib/ruby/gems/3
 sed -i '442, 476 {s/^/#/};436, 438 {s/^/#/}' /data/data/com.termux/files/usr/lib/ruby/gems/3.1.0/gems/logging-2.3.0/lib/logging/diagnostic_context.rb
 
 echo
-center "*"
-echo -e "\033[32m Installation complete. \n Launch metasploit by executing: msfconsole\033[0m"
-center "*"
+echo -e "\033[32m Installation complete. \n Msfconsole fixed: type msfconsole to run the metasploit\033[0m"
