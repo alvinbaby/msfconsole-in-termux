@@ -22,7 +22,7 @@ Step 1 Download termux and termux api from <a href="https://f-droid.org/en/" tar
 Download and execute the script
 <pre>pkg update; pkg upgrade
 pkg install wget curl
-cd $HOME;wget https://raw.githubusercontent.com/alvinbaby/msfconsole-in-termux/main/Install.sh -q;bash install.sh </pre>
+cd $HOME;wget https://raw.githubusercontent.com/alvinbaby/msfconsole-in-termux/main/Install.sh -q;bash Install.sh </pre>
 
 <pre>rm -rf /data/data/com.termux/files/usr/bin/msfvenom
 
