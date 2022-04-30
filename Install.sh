@@ -21,6 +21,7 @@ echo -e "
             +-+-+ +-+-+ +-+-+-+-+
             |b|y| |M|R| |J|I|N|N|
             +-+-+ +-+-+ +-+-+-+-+
+        ${Green}[ ${Yellow}@MrJinnTelegram${clear} ${Green}]${clear}
 "
 
 echo "Please wait..."
@@ -45,8 +46,10 @@ sleep 3
 clear
 echo -e "
                 
-      SCRIPT BY |D|E|D|S|H|I|T| EDITED BY EFX TV
-                  ${Green}[ ${Yellow}t.me/efxtv${clear} ${Green}]${clear}
+               |B|Y |M|R| |J|I|N|N|
+
+      ${Green}[ ${Yellow}@MrJinnTelegram${clear} ${Green}]${clear}
+                  
 "
 echo
 sleep 3
@@ -137,9 +140,9 @@ ln -s $HOME/metasploit-framework/msfvenom /data/data/com.termux/files/usr/bin/
 echo
 clear
 echo -e "
-                
-      SCRIPT BY |D|E|D|S|H|I|T| EDITED BY EFX TV
-                  ${Green}[ ${Yellow}t.me/efxtv${clear} ${Green}]${clear}
+                |B|Y |M|R| |J|I|N|N|
+              
+                  ${Green}[ ${Yellow}@MrJinnTelegram${clear} ${Green}]${clear}
 "
 sleep 3
 echo 
